@@ -1,7 +1,11 @@
+import { ListarProdutos } from "./pages/private/listarprodutos";
+import List from "./pages/private/listats";
+
 function App() {
   return (
     <div>
-      <h1>FIRST PROJECT</h1>
+      <ListarProdutos />
+      {/* <List /> */}
     </div>
   );
 }
