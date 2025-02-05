@@ -9,10 +9,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useAxios from "@/hook/use-axios";
+import { Product } from "@/interfaces/productlist";
 import instance from "@/service/api";
 
 export function ListarProdutos() {
-  const [data, loading, error] = useAxios({
+  const [data] = useAxios({
     axiosinstance: instance,
     method: "get",
     url: "/products/find-all",
@@ -57,7 +58,7 @@ export function ListarProdutos() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.content?.map((invoice) => (
+          {data?.content?.map((invoice: Product) => (
             <TableRow key={invoice.id}>
               <TableCell>
                 <div className="flex items-center gap-2">
